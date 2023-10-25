@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,10 @@ Route::get('/', function () {
     //return view('welcome');
     return "hola desde dla ruta principal";
 });
+
+//formulario
+Route::get('/personas/crear',[PersonaController::class,'crear'])->name('personas.crear');
+
+//guardar datos a la BD
+Route::post('/personas',[PersonaController::class,'guardar'])->name('personas.guardar');
 
